@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+}
+/*
+   Header
+ */
+.header_photo {
+    float: left;
+    margin-bottom: 1em;
+}
+.header_name,
+.header_tagline {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    background-color: rgba(225, 225, 225, 0.6);
+    padding-right: 5%
+}
+h1.header_name {
+    font-size: 2.5em;
+}
+hr.sub-header-rule {
+    height: 2px;
+    background: darkgrey;
+    width: 100%;
+}
+.body_photo {
+    max-width: 100%;
+    object-fit: contain;
+}

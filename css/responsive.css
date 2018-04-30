@@ -1,0 +1,33 @@
+@media screen and (max-width: 430px) {
+    .header_photo,
+    .sub-header-rule {
+        display: none;
+    }
+    .header {
+        background: url("../img/zoephoto-medium.jpg") 85% 40%;
+        margin: 0;
+    }
+    .header_name,
+    .header_tagline {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .header_name {
+        margin: 170px auto 10px 20px;
+    }
+    .header_tagline {
+        font-style: italic;
+        font-size: 1.3em;
+        margin: 10px auto 32px 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 1080px) {
+    body {
+        max-width: 1080px;
+        margin: 1em auto 1em auto;
+    }
+}
