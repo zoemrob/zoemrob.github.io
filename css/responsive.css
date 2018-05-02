@@ -1,28 +1,44 @@
-@media screen and (max-width: 430px) {
-    .header_photo,
+@media screen and (max-width: 330px) {
+    img.header_photo {
+        max-width: 100px;
+    }
+    h1.header_name {
+        font-size: 1.7em;
+    }
+    h2.header_tagline {
+        font-size: 1em;
+    }
+}
+@media screen and (min-width: 331px){
     .sub-header-rule {
         display: none;
     }
-    .header {
-        background: url("../img/zoephoto-medium.jpg") 85% 40%;
-        margin: 0;
+    img.header_photo {
+        max-height: 100px;
     }
-    .header_name,
-    .header_tagline {
-        background-color: rgba(255, 255, 255, 0.6);
+    h1.header_name {
+        font-size: 2em;
     }
-    .header_name {
-        margin: 170px auto 10px 20px;
-    }
-    .header_tagline {
-        font-style: italic;
+    h2.header_tagline {
         font-size: 1.3em;
-        margin: 10px auto 32px 70px;
+        margin: 0 0 1em 50px;
     }
 }
-
-@media screen and (max-width: 768px) {
-
+@media screen and (min-width: 470px){
+    img.header_photo {
+        max-height: 120px;
+    }
+}
+@media screen and (min-width: 768px) {
+    img.header_photo {
+        max-height: 140px;
+    }
+    h1.header_name {
+        margin-left: 1em;
+    }
+    h2.header_tagline {
+        margin-left: 100px;
+    }
 }
 
 @media screen and (min-width: 1080px) {

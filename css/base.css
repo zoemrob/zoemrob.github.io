@@ -12,27 +12,38 @@ body {
 /*
    Header
  */
-.header_photo {
-    float: left;
-    margin-bottom: 1em;
-}
-.header_name,
-.header_tagline {
+.header {
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: lightgray;
+}
+img.header_photo {
+    padding: 16px 16px 16px 16px;
+    width: auto;
+    position:absolute;
+}
+div.header_wrapper {
+    width: 100%;
+}
+h1.header_name,
+h2.header_tagline {
+    display: inherit;
     text-align: right;
-    background-color: rgba(225, 225, 225, 0.6);
-    padding-right: 5%
+    padding-right: 5%;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 h1.header_name {
-    font-size: 2.5em;
+    font-size: 3em;
+}
+h2.header_tagline {
+    font-style: italic;
 }
 hr.sub-header-rule {
     height: 2px;
     background: darkgrey;
     width: 100%;
 }
-.body_photo {
+img.body_photo {
     max-width: 100%;
     object-fit: contain;
 }
