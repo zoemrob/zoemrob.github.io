@@ -41,11 +41,13 @@
     }
 }
 
-@media screen and (max-width: 470px){
+@media screen and (min-width: 390px) {
     .header_photo {
         max-height: 120px;
     }
+}
 
+@media screen and (max-width: 470px){
     .emph-text {
         font-size: 1em;
     }
