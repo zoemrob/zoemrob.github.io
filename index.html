@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <title>Zoe Robertson</title>
+</head>
+<body>
+    <header class="header">
+        <img class="header_photo" src="img/logo-cutout.png" alt="Zoe Robertson logo" title="Zoe Robertson Logo">
+        <div class="header_wrapper">
+            <h1 class="header_name text-bkg">Zoe Robertson</h1>
+            <h2 class="header_tagline text-bkg">Full-Stack(ed) Web Dev</h2>
+        </div>
+    </header>
+    <main>
+        <div class="highlighted">
+            <picture>
+                <source media="(max-width: 430px)" srcset="img/coding-glasses-mobile.jpg">
+                <source media="(min-width: 431px) and (max-width: 768px)" srcset="img/coding-glasses-medium.jpg">
+                <img src="img/coding-glasses-large.jpg" alt="Glasses sitting on a laptop, with code on the screen"
+                     title="Rubbing tired eyes after a long day of work" class="body_photo">
+            </picture>
+            <div class="highlighted_text">
+                <span class="emph-text text-bkg highlighted_shape">Featured Technologies:</span>
+                <ul class="text-bkg no-list highlighted_shape">
+                    <li class="skills-text">PHP</li>
+                    <li class="skills-text">JavaScript (ES5, ES6)</li>
+                    <li class="skills-text">MongoDB</li>
+                    <li class="skills-text">Vagrant</li>
+                    <li class="skills-text">HTML5</li>
+                    <li class="skills-text">CSS3</li>
+                    <li class="skills-text">Bash Scripting</li>
+                </ul>
+            </div>
+        </div>
+        <section class="featured_work">
+            <div class="project-1 std-shadow">
+                <figure id="project-1-figure">
+                    <a href="https://github.com/zoemrob/social-media-project">
+                        <img class="project-thumb" src="img/social-media-js-snap.png"
+                             alt="Snippet of some JavaScript from the project."
+                             title="Snippet of some front-end JavaScript">
+                    </a>
+                    <figcaption class="project-caption">
+                        <a href="https://github.com/zoemrob/social-media-project" class="proj-link">Social Project</a>
+                        <p class="smol-text">Full Stack Social Media Project (in progress)</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project-2 std-shadow">
+                <figure id="project-2-figure">
+                    <a href="https://github.com/zoemrob/pixel-art-maker">
+                        <img class="project-thumb" src="img/pixel-maker-snap.png"
+                             alt="Pixel Art Canvas"
+                             title="Pixel Art Canvas Screenshot">
+                    </a>
+                    <figcaption class="project-caption">
+                        <a href="https://github.com/zoemrob/pixel-art-maker" class="proj-link">Pixel Art Maker</a>
+                        <p class="smol-text">A JavaScript project from Udacity Grow-With-Google Challenge</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project-3 std-shadow">
+                <figure class="vertical-cntr" id="project-3-figure">
+                    <a href="https://github.com/zoemrob/Co-Worker-Journal">
+                        <img class="project-thumb" src="img/co-worker-journal.png"
+                             alt="A screenshot of the Co-Worker Journal"
+                             title="A screenshot of the Co-Worker Journal">
+                    </a>
+                    <figcaption class="project-caption">
+                        <a href="https://github.com/zoemrob/Co-Worker-Journal" class="proj-link">Co-Worker Journal</a>
+                        <p class="smol-text">A Basic CRUD application for keeping track of your co-workers.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <aside>Zoe Robertson &copy; 2018</aside>
+    </footer>
+</body>
+</html>
