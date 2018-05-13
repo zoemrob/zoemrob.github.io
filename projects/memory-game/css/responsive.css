@@ -1,3 +1,9 @@
+@media screen and (min-width: 700px) {
+    .win-modal {
+        width: 70%;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .game-title {
         padding-left: 30px;
@@ -9,14 +15,18 @@
         padding-right: 30px;
     }
 
-    .card-set-name {
-        margin: 0;
-    }
+    /*.card-set-name {*/
+        /*margin: 0;*/
+    /*}*/
 }
 
 @media screen and (max-width: 650px) {
     .star-avg .fa {
         display: none;
+    }
+
+    h3 {
+        font-size: 1em;
     }
 }
 
@@ -41,5 +51,20 @@
 
     .star-avg p {
         margin-top: 0;
+    }
+
+    h3 {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .fa-star,
+    .fa-star-o {
+        font-size: 0.8em;
+    }
+
+    h3 {
+        font-size: 0.6em;
     }
 }

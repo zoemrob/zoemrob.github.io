@@ -73,7 +73,11 @@ const Board = function () {
 };
 
 Board.prototype.saveGameState = function () {
-    return {cards: this.boardInfo, turns: this.turnCounter};
+    return {
+        cards: this.boardInfo,
+        turns: this.turnCounter,
+        timer: this.timer
+    };
 };
 
 Board.prototype.setNewBoardInfo = function () {
@@ -102,6 +106,7 @@ Board.prototype.setNewBoardInfo = function () {
 Board.prototype.setLastBoardInfo = function (boardInfo) {
     this.boardInfo = boardInfo.cards;
     this.turnCounter = boardInfo.turns;
+    this.timer = boardInfo.timer;
     return this.boardInfo;
 };
 
@@ -141,6 +146,10 @@ Board.prototype.makeBoardElements = function () {
 
 Board.prototype.resetBoard = function () {
     this.boardInfo = [];
+    if (this.turnCounter > 0) {
+        this.resetTurns();
+    }
+
 };
 
 Board.prototype.createCard = function (cardName, cardId, matched = false) {
@@ -216,6 +225,15 @@ Board.prototype.addTurn = function () {
     this.checkScore();
 };
 
+Board.prototype.resetTurns = function () {
+    this.turnCounter = 0;
+    this.starCounter = 5;
+    const moveCounter = document.getElementById('js-moves'),
+        starCounter = document.getElementById('js-stars');
+    moveCounter.innerText = '';
+
+};
+
 Board.prototype.checkScore = function () {
     const stars = document.getElementById('js-stars');
     switch (this.turnCounter) {
@@ -284,7 +302,9 @@ Board.prototype.incorrectGuess = function (that) {
 
 Board.prototype.toggleOpen = function (element) {
     const open = document.getElementById(element);
-    open.classList.toggle('open');
+    if (open) {
+        open.classList.toggle('open');
+    }
 };
 
 Board.prototype.updateBoard = function(card) {
@@ -311,6 +331,10 @@ Board.prototype.updateBoard = function(card) {
 
 };
 
+Board.prototype.setTimer = function(val) {
+    this.timer = val;
+};
+
 Board.prototype.checkWin = function () {
     let matchedCount = 0,
         win = 8;
@@ -326,8 +350,4 @@ Board.prototype.checkWin = function () {
         winObject.winTime = this.timer;
         return winObject;
     }
-};
-
-Board.prototype.debug = function () {
-    console.log(this);
 };
