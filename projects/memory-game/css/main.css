@@ -1,0 +1,166 @@
+html {
+    box-sizing: border-box;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+button {
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px;
+}
+
+main {
+    max-width: 80%;
+    margin: 0 auto 0 auto;
+}
+/**
+    Controls header
+ */
+
+.header-dock {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.controls,
+.stats-dock {
+    width: 100%;
+}
+
+.control-item {
+    display: inline-block;
+}
+
+.game-title {
+    width: 70%;
+    text-align: left;
+}
+
+.start-btn {
+    width: 75px;
+}
+
+/**
+    Stats header
+ */
+
+.stats-dock {
+    text-align: center;
+}
+
+.stats-dock {
+    margin-top: 0;
+}
+
+.stats-item {
+    display: inline-block;
+    margin: 0 1em 0 1em;
+}
+
+/**
+    Card container
+ */
+
+.card-container {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 8px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #6495ed;
+    text-align: inherit;
+    padding-bottom: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card h3 {
+    margin: 0;
+    display: none;
+}
+
+.card-set-name {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.matched {
+    background-color: red;
+}
+
+.open {
+    background-color: green;
+}
+
+.open h3,
+.matched h3 {
+    display: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden {
+    display: none;
+}
+
+/**
+    Win Modal
+ */
+
+.modal-bg {
+    position: fixed;
+    z-index: 3;
+    padding-top: 15%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.win-modal {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    width: 45%;
+    text-align: center;
+    background-color: #22ef0b;
+    margin: 0 auto;
+}
+
+.win-modal p {
+    font-size: 1.5em;
+}
+
+.win-modal h2 {
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+.win-modal button {
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.modal-btn-wrap {
+    text-align: right;
+}
