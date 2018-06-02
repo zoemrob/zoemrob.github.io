@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Frogger Clone!</title>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Chewy" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Frogger Clone</h1>
+</header>
+    <div class="char-select">
+        <h1>Choose A Character!</h1>
+        <table id="js-char-select">
+            <colgroup span="5">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <tr>
+                <th>Boy</th>
+                <th>Cat Girl</th>
+                <th>Edgy Girl</th>
+                <th>Pink Girl</th>
+                <th>"Extra" Girl</th>
+            </tr>
+            <tr>
+                <td class="selected"><img id="js-char-1" src="images/char-boy.png"></td>
+                <td><img id="js-char-2" src="images/char-cat-girl.png"></td>
+                <td><img id="js-char-3" src="images/char-horn-girl.png"></td>
+                <td><img id="js-char-4" src="images/char-pink-girl.png"></td>
+                <td><img id="js-char-5" src="images/char-princess-girl.png"></td>
+            </tr>
+        </table>
+        <span>Difficulty:</span>
+        <select id="js-difficulty">
+            <option value="0" selected>Easy</option>
+            <option value="1">Medium</option>
+            <option value="2">Hard</option>
+            <option value="3">Crazy</option>
+        </select>
+        <button id="js-new-game">Start Game!</button>
+    </div>
+    <div class="modal-bg hidden" id="js-win-modal">
+        <div class="win-modal">
+            <h1>Congratulations You Won!</h1>
+            <h2>Difficulty: <span id="js-win-difficulty"></span></h2>
+            <h2>Deaths: <span id="js-win-deaths"></span></h2>
+            <button id="js-play-again">Play Again?</button>
+        </div>
+    </div>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
