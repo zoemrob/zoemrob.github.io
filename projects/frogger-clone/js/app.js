@@ -243,6 +243,7 @@ const gameInit = () => {
      * @param {KeyboardEvent} e
      */
     function charSelectKey (e) {
+        e.preventDefault();
         selectedId = undefined;
         const prevSelected = document.querySelector('td.selected');
         let next = undefined;
@@ -301,6 +302,12 @@ const gameInit = () => {
         winPlayAgain.removeEventListener('click', replay);
         startButton.removeEventListener('click', newGame);
         Engine(settings);
+        switch (settings.difficulty) {
+            case 'Medium':
+            case 'Hard':
+            case 'Crazy':
+                window.scrollTo(0,document.body.scrollHeight);
+        }
     }
     startButton.addEventListener('click', newGame);
 };

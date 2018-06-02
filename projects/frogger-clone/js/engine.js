@@ -124,6 +124,7 @@ const Engine = function(settings, global = this) {
      * @param {KeyboardEvent} e
      */
     function input (e) {
+        e.preventDefault();
         player.handleInput(e.key);
     }
 
