@@ -1,0 +1,52 @@
+@import "vars"
+@mixin btn($icon)
+  //border: 3px solid #000
+  border: none
+  border-radius: 50px
+  text-transform: uppercase
+  color: #000
+  padding: 12px 30px
+  transition: all 0.6s
+  overflow: hidden
+  position: relative
+  
+  &:before
+    position: absolute
+    content: $icon
+    font-size: 2em
+    left: 70%
+    opacity: 0
+    top: 4px
+
+  &:hover:before, &:focus:before, &:active:before
+    transition: all 0.3s
+    left: 80%
+    opacity: 1
+
+  &:hover, &:focus, &:active
+    outline: none
+    background-color: $light_yellow
+
+.btn
+  position: relative
+  width: 100px
+  &:focus
+    box-shadow: 0 0 2px 2px #5b9dd9
+
+.more
+  @include btn($right_arr)
+
+.more.displayed
+  background-color: initial
+  border: 1px solid #000
+  &:before
+    animation: fadeOut 0.6s
+    opacity: 0
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+    transform: rotate(90deg)
+

@@ -3,85 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/base.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/_responsive.css">-->
+    <link href="dist/main.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <title>Zoe Robertson</title>
 </head>
 <body>
-    <header class="header">
-        <img class="header_photo" src="img/logo-cutout.png" alt="Zoe Robertson logo" title="Zoe Robertson Logo">
-        <div class="header_wrapper">
-            <h1 class="header_name text-bkg">Zoe Robertson</h1>
-            <h2 class="header_tagline text-bkg">Full-Stack(ed) Web Dev</h2>
+    <header>
+        <div class="overlay" id="overlay">
+            <ul>
+                <li class="header-logo">
+                    <img class="header_photo"
+                         src="img/logo-mini.png"
+                         alt="Zoe Robertson logo"
+                         title="Zoe Robertson Logo">
+                </li>
+                <li class="header-name">Zoe Robertson</li>
+                <li class="header-tagline">Full Stack Web Developer</li>
+            </ul>
         </div>
+
+       <!---->
+        <!--<div class="header_wrapper">-->
+            <!--<h1 class="header_name text-bkg">Zoe Robertson</h1>-->
+            <!--<h2 class="header_tagline text-bkg">Full-Stack(ed) Web Dev</h2>-->
+        <!--</div>-->
     </header>
     <main>
-        <div class="highlighted">
-            <picture>
-                <source media="(max-width: 430px)" srcset="img/coding-glasses-mobile.jpg">
-                <source media="(min-width: 431px) and (max-width: 768px)" srcset="img/coding-glasses-medium.jpg">
-                <img src="img/coding-glasses-large.jpg" alt="Glasses sitting on a laptop, with code on the screen"
-                     title="Rubbing tired eyes after a long day of work" class="body_photo">
-            </picture>
-            <div class="highlighted_text">
-                <span class="emph-text text-bkg highlighted_shape">Featured Technologies:</span>
-                <ul class="text-bkg no-list highlighted_shape">
-                    <li class="skills-text">PHP</li>
-                    <li class="skills-text">JavaScript (ES5, ES6)</li>
-                    <li class="skills-text">MongoDB</li>
-                    <li class="skills-text">Vagrant</li>
-                    <li class="skills-text">HTML5</li>
-                    <li class="skills-text">CSS3</li>
-                    <li class="skills-text">Bash Scripting</li>
-                </ul>
-            </div>
+        <div class="col-1">
+            <section class="projects">
+                <h2>Projects</h2>
+                <div class="projects-container">
+                    <div class="project-slider">
+                        <div class="project-thumb">
+                            <figure id="project-1-figure">
+                                <a href="https://github.com/zoemrob/social-media-project">
+                                    <!--<img class="project-thumb" src="img/social-media-js-snap.png"-->
+                                         <!--alt="Snippet of some JavaScript from the project."-->
+                                         <!--title="Snippet of some front-end JavaScript">-->
+                                </a>
+                                <figcaption class="project-caption">
+                                    <a href="https://github.com/zoemrob/social-media-project" class="proj-link">Social Project</a>
+                                    <p class="smol-text">Full Stack Social Media Project (in progress)</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-thumb">
+                            <figure id="project-2-figure">
+                                <a href="https://github.com/zoemrob/memory-game">
+                                    <!--<img class="project-thumb" src="img/memory-game-snap.png"-->
+                                         <!--alt="Memory Game"-->
+                                         <!--title="Memory Game">-->
+                                </a>
+                                <figcaption class="project-caption">
+                                    <a href="https://github.com/zoemrob/memory-game" class="proj-link">Memory Game</a>
+                                    <p class="smol-text">A JavaScript browser game featuring save and load via localStorage.
+                                        <a href="projects/memory-game/index.html">Click here to play!</a></p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-thumb">
+                            <figure class="vertical-cntr" id="project-3-figure">
+                                <a href="https://github.com/zoemrob/Co-Worker-Journal">
+                                    <!--<img class="project-thumb" src="img/co-worker-journal.png"-->
+                                         <!--alt="A screenshot of the Co-Worker Journal"-->
+                                         <!--title="A screenshot of the Co-Worker Journal">-->
+                                </a>
+                                <figcaption class="project-caption">
+                                    <a href="https://github.com/zoemrob/Co-Worker-Journal" class="proj-link">Co-Worker Journal</a>
+                                    <p class="smol-text">A Basic CRUD application for keeping track of your co-workers.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-thumb">Test 4</div>
+                    </div>
+                </div>
+            </section>
+            <section class="bio">
+                <p class="em">A little about me...</p>
+                <p class="facts">Self-taught.
+                    Ambitious.
+                    Developed in Portland, OR.
+                </p>
+                <button class="btn more" id="js-more-bio-btn">More...</button>
+                <div class="bio-wrapper hidden" id="js-bio-wrapper">
+                    <p class="bio">
+                        I love to code. Programming was something I had always thought about getting into, but imagined it as being too difficult. College (and the money involved) was a luxury not a right. I recall reading an article and a statistic about how by 2020 there will be a projected two million job openings in Software Development with only <span class="em">800,000</span> C.S. majors graduating.
+                    </p>
+                    <p class="em">The opportunity was too tempting to resist!</p>
+                    <p class="bio">
+                        So I started plugging away. I determined if I was to be successful as a self-taught programmer I needed to devote as much - or more - time to programming as if I were going to college for it. For the next 12 months, I went at least 10-15 hrs a week.
+                    </p>
+                </div>
+            </section>
         </div>
-        <section class="featured_work">
-            <div class="project-1 std-shadow text-bkg">
-                <figure id="project-1-figure">
-                    <a href="https://github.com/zoemrob/social-media-project">
-                        <img class="project-thumb" src="img/social-media-js-snap.png"
-                             alt="Snippet of some JavaScript from the project."
-                             title="Snippet of some front-end JavaScript">
-                    </a>
-                    <figcaption class="project-caption">
-                        <a href="https://github.com/zoemrob/social-media-project" class="proj-link">Social Project</a>
-                        <p class="smol-text">Full Stack Social Media Project (in progress)</p>
-                    </figcaption>
+        <div class="col-2">
+            <section class="pic">
+                <figure>
+                    <img src="img/zoephoto-tiny.jpg" alt="A picture of Zoe Robertson" title="Zoe Robertson in a wedding.">
+                    <figcaption class="em">Wedding photos do make great business photos.</figcaption>
                 </figure>
-            </div>
-            <div class="project-2 std-shadow text-bkg">
-                <figure id="project-2-figure">
-                    <a href="https://github.com/zoemrob/memory-game">
-                        <img class="project-thumb" src="img/memory-game-snap.png"
-                             alt="Memory Game"
-                             title="Memory Game">
-                    </a>
-                    <figcaption class="project-caption">
-                        <a href="https://github.com/zoemrob/memory-game" class="proj-link">Memory Game</a>
-                        <p class="smol-text">A JavaScript browser game featuring save and load via localStorage.
-                            <a href="projects/memory-game/index.html">Click here to play!</a></p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="project-3 std-shadow text-bkg">
-                <figure class="vertical-cntr" id="project-3-figure">
-                    <a href="https://github.com/zoemrob/Co-Worker-Journal">
-                        <img class="project-thumb" src="img/co-worker-journal.png"
-                             alt="A screenshot of the Co-Worker Journal"
-                             title="A screenshot of the Co-Worker Journal">
-                    </a>
-                    <figcaption class="project-caption">
-                        <a href="https://github.com/zoemrob/Co-Worker-Journal" class="proj-link">Co-Worker Journal</a>
-                        <p class="smol-text">A Basic CRUD application for keeping track of your co-workers.</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
+            </section>
+            <section class="skills">
+                <h2>Technologies</h2>
+                <ul class="skills-text">
+                    <li>Javascript <span class="small-em">(Node.js & Browser)</span></li>
+                    <li>PHP 7 <span class="small-em">(& Composer)</span></li>
+                    <li>MongoDB</li>
+                    <li>SQL <span class="small-em">(PostgreSQL, MS SQL Server)</span></li>
+                    <li>Build Tools <span class="small-em">(Gulp.js & Bash)</span></li>
+                    <li>Vagrant</li>
+                </ul>
+                <h2>Skills</h2>
+                <ul class="skills-text">
+                    <li>OOP <span class="small-em">(Inheritance, Interfaces)</span></li>
+                    <li>Managing Large Datasets <span class="small-em">(Data Migration & Formatting)</span></li>
+                    <li>Automation <span class="small-em">(If I have to do it manually more than twice... you can bet a script is coming)</span></li>
+                </ul>
+            </section>
+        </div>
     </main>
-    <footer class="footer">
-        <aside>Zoe Robertson &copy; 2018</aside>
+    <footer>
+        <span>Zoe Robertson &copy; 2018</span>
     </footer>
+<script src="dist/main.js" type="application/x-javascript"></script>
 </body>
 </html>
