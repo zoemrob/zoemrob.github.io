@@ -24,6 +24,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-uglify-es": "^1.0.4",
     "gulp-util": "^3.0.8",
-    "minimatch": "^3.0.4"
+    "minimatch": "^3.0.4",
+    "mongoose": "^5.1.7"
   }
 }

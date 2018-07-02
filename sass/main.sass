@@ -13,13 +13,12 @@ html, body
 /* Header */
 header
   height: 50px + $pad12 * 2
-  background-color: $trans-green
   text-align: center
   font-family: $font-stack
   ul
     position: fixed
     top: 0
-    left: 10%
+    //left: 10%
     width: 100%
     max-width: 900px
     margin: 0
@@ -39,6 +38,13 @@ div.overlay
   width: 100%
   height: 50px + $pad12 * 2
   z-index: 2
+  box-shadow: $shdw-0
+
+li.header-logo
+  //background-color: rgba(0,0,0,0.05)
+  padding-right: 0
+  margin-right: 5%
+  height: 45px
 
 li.header-name, li.header-tagline
   font-size: 2em
@@ -62,31 +68,74 @@ main
 
 div.col-1
   width: 55%
-  margin: 36px 2.5%
+  margin: $std-margin 2.5%
+  display: flex
+  flex-wrap: wrap
+
+  &.collapsed
+    overflow-x: hidden
+    transition: width 0.5s
+    animation: collapsed
+
+    @keyframes collapsed
+      from
+        width: 55%
+      to
+        width: 0
+
+  &#js-col-1
+    order: 1
+    height: 425px
+  &#js-col-1-projects
+    order: 3
 
   section.bio
+    &.hidden
+      display: none
 
     //order: 2
     background-color: $light-blue
     text-align: left
-    margin-top: 5%
+    box-shadow: $shdw-0
 
     p.em
       padding-left: 10%
       font-size: 160%
       font-weight: bold
-      background-color: $seafoam
+      background-color: $grey //$light_yellow
       padding-top: 12px
       padding-bottom: 12px
+      margin: 12px
+      border-radius: 50px
+      font-family: $font-oswald
+
     p.facts
       white-space: pre-line
-      padding-left: 15%
-      padding-bottom: 5%
+      padding: 25% 15% 5% 10%
       font-family: $font-stack
-      font-size: 200%
+      font-size: 150%
+      color: $off_white
+      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url("./../img/portland-oregon-medium.png")
+      background-position: center
+    span.bio-em
+      //font-size: 125%
+      display: inline-block
+      font-weight: bold
+      background-color: $text-highlight //$light_yellow
+      padding: 0 5px
+      margin-bottom: 2px
+      //margin-right: 5%
+      &::after
+        content: "\A"
+        white-space: pre
     p.bio
       text-align: justify
       font-family: "Helvetica Neue", sans-serif
+      &:first-of-type::before
+        content: none
+      &::before
+        content: ''
+        margin-left: 1.5em
     p
       font-size: 110%
       padding: 5%
@@ -103,22 +152,28 @@ div.col-1
 
   section.projects
     text-align: center
+    margin-top: 5%
+    width: 100%
+    &.hidden
+      display: none
+
+    h2, div.projects-container
+      margin-top: 0
 
     h2
-      background-color: $blue
-      color: #fff
+      margin-bottom: 0
+      background-color: $grey
       font-family: $font-stack
       font-size: 150%
       padding: $pad12
 
     div.projects-container
-      width: 400px
+      width: 100%
       overflow-x: scroll
       margin: 0 auto
 
       div.project-slider
         width: 450%
-
         div.project-thumb
           border-right: 1px solid $grey
           border-left: 1px solid $grey
@@ -128,47 +183,70 @@ div.col-1
           background-color: $light-blue
           margin-right: 24px
 
+  section.contact-main
+    &.hidden
+      display: none
+
+
 div.col-2
   width: 37.5%
-  margin: 36px 2.5% 36px 0
+  margin: $std-margin 2.5% 0 0
+  height: 950px
+  order: 2
+  position: sticky
+  top: -230px
 
   & > *
     background-color: $light-blue
 
   section.pic
-
     padding: 5%
-    //background-color: $light-blue
+    margin-bottom: $std-margin
+    box-shadow: $shdw-0
+    background-color: $dark_yellow
 
-    img
-      margin-bottom: 10%
+    //img
+      margin-bottom: $std-margin
     figcaption
-      background-color: $seafoam
+      //background-color: $light_yellow
       padding: 5%
       width: 100%
       margin: 0
 
   section.skills
+    height: 475px
+    box-shadow: $shdw-0
     h2
+      margin: 0 auto
       font-family: $font-stack
-      //font-weight: normal
+      font-weight: bold
       background-color: $grey
       padding: $pad12
     ul.skills-text
       list-style-type: none
-      padding-left: $pad12
+      padding: $pad12
       text-align: left
+      margin: 0 auto
 
       li
         font-size: 125%
-        font-family: $font-stack
+        font-family: $font-rob
         font-weight: bolder
 
       li:before
         content: '#  '
-        color: $trans-green
+        color: $grey
 
+  section.contact-sidebar
+    height: 90px
+    margin: 25px 0
+    box-shadow: $shdw-1
 
+    p
+      margin: 0
+      font-size: 125%
+      padding: 7.5px
+      font-family: $font-rob
 
 /* Footer */
 footer
@@ -184,11 +262,27 @@ footer
 /* Shared Styles */
 .em
   font-style: italic
-  font-size: larger
+
 .small-em
   font-style: italic
   font-size: smaller
   font-weight: normal
+  font-family: $font-stack
+
+header ul li.navigation
+  display: none
+
+hr.styled-1
+  border: 0
+  height: 1px
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+a
+  text-decoration: none
+  background-color: $trans-green
+  color: #000
+  &:hover
+    transition: background-color 0.3s
+    background-color: $seafoam
 
 @import "responsive"
 // imported at bottom to make sure media queries work correctly.
