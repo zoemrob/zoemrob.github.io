@@ -23,9 +23,10 @@ gulp.task('styles', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['styles'], function () {
+gulp.task('default', ['styles', 'js'], function () {
     gulp.watch(sassRoot + '/**/*.sass', ['styles'])
         .on('change', browserSync.reload);
+    gulp.watch(jsRoot + '/**/*.js', ['js']).on('change', browserSync.reload);
     browserSync.init({
         server: './'
     });
@@ -38,7 +39,8 @@ gulp.task('js', function() {
         .on('error', function (err) {
             gutil.log(gutil.colors.red('[Error'), err.toString());
         })
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('api-project', ['api-project-js'], function() {

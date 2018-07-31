@@ -71,17 +71,12 @@ div.col-1
   margin: $std-margin 2.5%
   display: flex
   flex-wrap: wrap
+  transition: width
 
   &.collapsed
     overflow-x: hidden
+    width: 0%
     transition: width 0.5s
-    animation: collapsed
-
-    @keyframes collapsed
-      from
-        width: 55%
-      to
-        width: 0
 
   &#js-col-1
     order: 1
@@ -98,7 +93,7 @@ div.col-1
     text-align: left
     box-shadow: $shdw-0
 
-    p.em
+    h2
       padding-left: 10%
       font-size: 160%
       font-weight: bold
@@ -119,12 +114,12 @@ div.col-1
       background-position: center
     span.bio-em
       //font-size: 125%
-      display: inline-block
+      //display: inline-block
       font-weight: bold
-      background-color: $text-highlight //$light_yellow
+      background-color: $text-highlight
       padding: 0 5px
       margin-bottom: 2px
-      //margin-right: 5%
+      margin-right: 5%
       &::after
         content: "\A"
         white-space: pre
@@ -186,6 +181,24 @@ div.col-1
   section.contact-main
     &.hidden
       display: none
+    &.offscreen
+      position: absolute
+      left: 10000px
+
+
+    width: 100%
+
+
+    h2
+      text-align: center
+      font-size: 160%
+      font-weight: bold
+      background-color: $grey //$light_yellow
+      padding-top: 12px
+      padding-bottom: 12px
+      margin: 0
+      border-radius: 50px
+      font-family: $font-oswald
 
 
 div.col-2

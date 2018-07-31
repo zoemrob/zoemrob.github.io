@@ -7,19 +7,23 @@ const load = () => {
     //const aboutMe = document.getElementById('js-about-me');
     const contactSideBar = document.getElementById('js-contact-sidebar');
     const contactMain = document.getElementById('js-col-1-contact');
+    const contactForm = document.getElementById('js-contact-form');
     const win = window.innerWidth;
 
     moreBtn.onclick = toggleBio;
     navButtons.onclick = navigate;
     document.onkeyup = navigate;
 
-    if (win >= 1100) {
-        project.classList.add('hidden');
-        contactMain.classList.add('hidden');
-    } else {
-        contactMain.classList.remove('hidden');
-        contactMain.classList.add('offscreen');
-    }
+    visibleContent();
+
+    //
+    // if (win >= 1100) {
+    //     project.classList.add('hidden');
+    //     contactMain.classList.add('hidden');
+    // } else {
+    //     contactMain.classList.remove('hidden');
+    //     contactMain.classList.add('offscreen');
+    // }
 
     function toggleBio(e) {
         const bioWrapper = document.getElementById('js-bio-wrapper');
@@ -83,22 +87,84 @@ const load = () => {
             }
         }
     }
-    //
-    //
-    // aboutMeNav.onclick = (e) => {
-    //     if (e.target.nodeName === 'LI') {
-    //         // TODO implement eventListener on whole nav-bar, check if LI, if it is, get id
-    //     }
-    //
-    //     const bio = document.getElementById('js-bio'),
-    //         pic = document.getElementById('js-bio-pic'),
-    //         skills = document.getElementById('js-bio-skills'),
-    //         bioElems = [bio, pic, skills];
-    //
-    //
-    // };
+    contactForm.onsubmit = contact;
 
+    function contact(e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const data = {};
 
+        for(let field of formData.entries()) {
+            let key = field[0],
+                value = field[1];
+            if (key === 'client-phone') {
+                value = value.replace(/\D/g, '');
+                if (value.length !== 10 && value.length !== 11) {
+                    window.alert('Please enter a valid 10-11 digit phone number\.');
+                    return false;
+                }
+            }
+            data[key] = value;
+        }
 
+        console.log(data);
+    }
+
+    function visibleContent() {
+        if (window.innerWidth >= 1100) {
+
+            if (!project.classList.contains('displayed') && !contactMain.classList.contains('displayed')) {
+                bio.classList.add('displayed');
+            }
+
+            if (!project.classList.contains('displayed')) {
+                project.classList.add('hidden');
+            }
+
+            if (!contactMain.classList.contains('displayed')) {
+                contactMain.classList.add('hidden');
+            }
+
+            if (contactMain.classList.contains('offscreen')) {
+                contactMain.classList.remove('offscreen');
+                contactMain.classList.add('hidden');
+            }
+
+        } else {
+
+            contactMain.classList.remove('displayed');
+            project.classList.remove('displayed');
+            bio.classList.remove('displayed');
+
+            if (bio.classList.contains('hidden')) {
+                bio.classList.remove('hidden');
+            }
+
+            if (project.classList.contains('hidden')) {
+                project.classList.remove('hidden');
+            }
+
+            contactMain.classList.remove('hidden');
+            contactMain.classList.add('offscreen');
+        }
+    }
+
+    (function() {
+
+        window.addEventListener("resize", resizeThrottler, false);
+
+        let resizeTimeout;
+        function resizeThrottler() {
+            // ignore resize events as long as an actualResizeHandler execution is in the queue
+            if ( !resizeTimeout ) {
+                resizeTimeout = setTimeout(function() {
+                    resizeTimeout = null;
+                    visibleContent();
+
+                    // The visibleContent will execute at a rate of 15fps
+                }, 66);
+            }
+        }
+    }());
 };
 document.addEventListener('DOMContentLoaded', load);

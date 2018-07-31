@@ -30,7 +30,8 @@
     <main>
         <div class="col-1" id="js-col-1">
             <section class="bio displayed" id="js-bio">
-                <p class="em">A little about me...</p>
+                <!--<p class="em">A little about me...</p>-->
+                <h2 class="em">A little about me...</h2>
                 <p class="facts">Self-taught.
                     Ambitious.
                     Developed in Portland, OR.
@@ -112,6 +113,26 @@
             <section class="contact-main hidden" id="js-col-1-contact">
                 <h2>Contact</h2>
                 <p>I am currently accepting new contracts...</p>
+                <form id="js-contact-form">
+                    <label for="client-name">Your Name:</label>
+                    <input type="text" id="client-name" name="client-name" required>
+                    <label for="client-email">Contact Email:</label>
+                    <input type="email" id="client-email" name="client-email" required>
+                    <label for="client-phone">Contact Phone (not required):</label>
+                    <input type="tel" id="client-phone" name="client-phone">
+                    <fieldset id="client-type">
+                        <legend>What type of business is this request for?</legend>
+                        <input type="radio" id="personal" value="personal"  name="client-type" checked>
+                        <label for="personal">Personal</label>
+                        <input type="radio" id="small-business" value="small-business" name="client-type">
+                        <label for="small-business">Small Business</label>
+                        <input type="radio" id="enterprise" value="enterprise" name="client-type">
+                        <label for="enterprise">Enterprise</label>
+                    </fieldset>
+                    <label for="description">Tell me about the nature of your request:</label>
+                    <textarea id="description" name="description" maxlength="1000" placeholder="Ex. I would like all of my company's website to be viewable on mobile and for text message alerts to be available to my users..." required></textarea>
+                    <button class="btn" type="submit">Send Message</button>
+                </form>
             </section>
         </div>
         <div class="col-2" id="js-col-2">
